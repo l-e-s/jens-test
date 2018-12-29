@@ -4,7 +4,7 @@ pipeline {
     stage('Allocate') {
       steps {
         node(label: 'dev19')
-        ws(dir: 'test')
+        ws(dir: '/home/www/dev19/dev')
       }
     }
     stage('Deploy') {
