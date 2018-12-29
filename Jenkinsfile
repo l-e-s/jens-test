@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('Allocate') {
       steps {
-        node(label: 'dev19')
         ws(dir: '/home/www/dev19/dev')
       }
     }
