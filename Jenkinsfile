@@ -8,10 +8,9 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        ws(dir: '/home/www/jenkins/$JOB_NAME') {
-          dir(path: '/home/www/jenkins/$JOB_NAME') {
-            sh '''pwd; ls
-'''
+        ws(dir: '/home/www/jenkins/${env.JOB_NAME}-${env.BUILD_NUMBER}') {
+          dir(path: '/home/www/jenkins/${env.JOB_NAME}-${env.BUILD_NUMBER}') {
+            sh 'pwd; ls'
           }
 
         }
