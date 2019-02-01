@@ -3,8 +3,13 @@ pipeline {
   stages {
     stage('Prepare') {
       steps {
-        node(label: 'dev3')
-        ws(dir: '/home/www/jenkins/env.JOB_NAME')
+        node(label: 'dev3') {
+          ws(dir: '/home/www/jenkins/env.JOB_NAME/env.BUILD_NUMBER') {
+            sh 'pwd; ls'
+          }
+
+        }
+
         sh 'pwd; ls'
       }
     }
