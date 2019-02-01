@@ -8,12 +8,15 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        ws(dir: '/home/www/dev19/JOB_NAME@2') {
-          sh '''pwd; ls
+        ws(dir: '/home/www/jenkins/JOB_NAME@2') {
+          dir(path: '/home/www/jenkins/JOB_NAME@2') {
+            sh '''pwd; ls
 '''
-          git(url: 'https://github.com/l-e-s/jens-test.git', branch: 'master')
+          }
+
         }
 
+        git(url: 'https://github.com/MIR24/FVOTE.git', branch: 'dev-nv-1')
       }
     }
     stage('Inform') {
