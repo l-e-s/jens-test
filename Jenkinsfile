@@ -10,7 +10,7 @@ pipeline {
 
         }
 
-        sh 'pwd; ls'
+        sh 'echo "2nd step"; pwd; ls'
       }
     }
   }
